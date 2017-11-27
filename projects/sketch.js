@@ -214,8 +214,8 @@ function directory(){
 function draw() {
 
 
-  //background(200);
-  stroke(20,200,100)
+  //Blue background
+  stroke(50, 100, 250)
 
   //if mouse is pressed clear the current sketch!
   if (mouseIsPressed) {
