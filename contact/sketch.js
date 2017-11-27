@@ -96,7 +96,7 @@ function styleContactAnchors(){
     aLinkedIn.style("text-decoration", "none");
     aLinkedIn.mouseOver(titleChangeBlack);
     aLinkedIn.mouseOut(titleChangeWhite);
-    aLinkedIn.position(width/4, height/2.4); // projects subtitle positioning
+    aLinkedIn.position(width/4, height/1.7); // projects subtitle positioning
 
 
 
@@ -108,7 +108,7 @@ function styleContactAnchors(){
     aGitHub.style("text-decoration", "none");
     aGitHub.mouseOver(titleChangeBlack);
     aGitHub.mouseOut(titleChangeWhite);
-    aGitHub.position(width/4, height/1.7); // contact subtitle positioning
+    aGitHub.position(width/1.45, height/2.3);  // contact subtitle positioning
 
 
   }
