@@ -1,95 +1,196 @@
-var allINeed;
-var rain;
-var img;
-var b2;
-var c1;
-var c2;
-var c3;
-var d3;
-var e2;
-var g1;
-var g2;
+
+/*
+p5.js javascript code for personal website of Isaac Wellish
+Created November 30th, 2017 with p5.js
+Property of Isaac Wellish
+Copyright Isaac Wellish 2017
+code adapted from p5.js example given on processing.org
 
 
-function preload(){
 
-	img = loadImage("rain.gif");
-	allINeed = loadSound("03 - All I Need copy.mp3");
-	rain = loadSound("Sound Effect - 'Rain & Thunder'.mp3");
-	b2 = loadSound("B2 copy.wav");
-	c1 = loadSound("C1 copy.wav");
-	c2 = loadSound("C2 copy.wav");
-	c3 = loadSound("C3 copy.wav");
-	d3 = loadSound("D3 copy.wav");
-	e2 = loadSound("E2 copy.wav");
-	g1 = loadSound("G1 copy.wav");
-	g2 = loadSound("G2 copy.wav");
+Anyone may take what they wish with the request of attribution 
+
+This website is meant ot be a fun interactive way for others to learn more about me but also for me to learn more about myself
+
+This is the first website I've build completely from scratch!
+
+Enjoy!
 
 
-}
-
-function keyPressed(){
-	if(keyCode == 90){//z
-		c1.play();
-		c1.setVolume(1.0)
-	}
-
-	else if(keyCode == 88){ //x
-		g1.play();
-
-	}
-
-	else if(keyCode == 67){ //c
-		c2.play();
-
-	}
-	else if(keyCode == 86){//v
-		e2.play();
-
-	}
-	else if(keyCode == 66){//b
-		g2.play();
-
-	}
-	else if(keyCode == 78){//n
-		b2.play();
-
-	}
-	else if(keyCode == 77){//m
-		c3.play();
-
-	}
-	else if(keyCode == 188){//,
-		d3.play();
-
-	}
-
-	else{
 
 
-	}
+*/
+//var nameTitle;
+//var projectsTitle;
+//var aboutMeTitle;
+//var contactTitle;
 
-	return false;
+var a0;
+var a1;
+var a2;
+var a3;
 
-
-}
+var pageTitles;
+var pageSubTitles;
+var canvas;
 
 function setup() {
-	createCanvas(2880, 1800);
-	image(img, 0, 0);
-	//allINeed.play();
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index', '-1');
+  background(0);
 
-	rain.play();
-	rain.setVolume(0.4);
-	
+
+//styleElements();
+styleAnchors();
+
+//directory();
+
+
+
 }
+
+//mouse over and out functions
+//hlighlight text in black or white when moused over or out
+function titleChangeBlack(){
+  this.style("color", "#000000");
+  this.style("background-color", "#ffffff");
+
+}
+
+function titleChangeWhite(){
+  this.style("color", "#ffffff");
+  this.style("background-color", "#000000");
+
+}
+
+
+
+//automatically resizes canvas to window when called in draw()
+
+
+function windowResized(){
+ createCanvas(windowWidth, windowHeight);
+  canvas.position(0,0);
+  //send canvas to back of page
+  canvas.style('z-index', '-1');
+  background(0);
+  //change position of elements;
+  styleElements();
+
+}
+
+
+function styleAnchors(){
+
+	a0 = createA('index.html', 'isaac wellish');
+	a0.style("font-size", "24px");
+    a0.style("color", "#000");
+    a0.style("background-color", "#fff");
+    a0.style("padding", "8px");
+    a0.style("text-decoration", "none");
+    a0.mouseOver(titleChangeBlack);
+    a0.mouseOut(titleChangeWhite);
+    a0.position(width/1.3, height/10); // name Title positioning
+
+	a1 = createA('projects/projects.html', 'projects');
+	a1.style("font-size", "18px");
+    a1.style("color", "#ffffff");
+    a1.style("background-color", "#000000");
+    a1.style("padding", "8px");
+    a1.style("text-decoration", "none");
+    a1.mouseOver(titleChangeBlack);
+    a1.mouseOut(titleChangeWhite);
+    a1.position(width/4, height/4); // projects subtitle positioning
+
+    a2 = createA('aboutMe/aboutMe.html', 'about me');
+	a2.style("font-size", "18px");
+    a2.style("color", "#ffffff");
+    a2.style("background-color", "#000000");
+    a2.style("padding", "8px");
+    a2.style("text-decoration", "none");
+    a2.mouseOver(titleChangeBlack);
+    a2.mouseOut(titleChangeWhite);
+    a2.position(width/1.45, height/2.3); // about me subtitle positioning
+	
+
+    a3 = createA('contact/contact.html', 'contact');
+	a3.style("font-size", "18px");
+    a3.style("color", "#ffffff");
+    a3.style("background-color", "#000000");
+    a3.style("padding", "8px");
+    a3.style("text-decoration", "none");
+    a3.mouseOver(titleChangeBlack);
+    a3.mouseOut(titleChangeWhite);
+	a3.position(width/4, height/1.7); // contact subtitle positioning
+
+
+	
+
+}
+
+
+
+function styleElements(){
+//styling loop for name title
+pageTitles = selectAll('.pageTitle');
+  for(var i = 0; i< pageTitles.length; i++){
+    pageTitles[i].style("font-size", "24px");
+    pageTitles[i].style("color", "#000000");
+    pageTitles[i].style("background-color", "#ffffff");
+    pageTitles[i].style("padding", "8px");
+    pageTitles[i].position(width/1.3, height/10); // name Title positioning
+    pageTitles[i].mouseOver(titleChangeWhite);
+    pageTitles[i].mouseOut(titleChangeBlack);
+  } 
+
+//styling loop for sub titles
+pageSubTitles = selectAll('.pageSubTitle');
+  for(var i = 0; i< pageSubTitles.length; i++){
+    pageSubTitles[i].style("font-size", "18px");
+    pageSubTitles[i].style("color", "#ffffff");
+    pageSubTitles[i].style("background-color", "#000000");
+    pageSubTitles[i].style("padding", "8px");
+    pageSubTitles[i].mouseOver(titleChangeBlack);
+    pageSubTitles[i].mouseOut(titleChangeWhite);
+  } 
+
+//positioning for sub titles
+pageSubTitles[0].position(width/4, height/4); // projects subtitle positioning
+pageSubTitles[1].position(width/1.45, height/2.3); // about me subtitle positioning
+pageSubTitles[2].position(width/4, height/1.7); // contact subtitle positioning
+
+
+}
+
+
+
+
 
 function draw() {
-	//background(255, 150);
 
-	fill(0);
-	noStroke();
-	rect(1280, 0, 160, 1800);
-	rect(0,720,1280,100);
+
+  //background(200);
+  stroke(20,200,100)
+
+  //if mouse is pressed clear the current sketch!
+  if (mouseIsPressed) {
+  canvas.clear();
+  canvas.position(0,0);
+  //send canvas to back of page
+  canvas.style('z-index', '-1');
+  background(0);
+  } else {
+    fill(0);
+  }
+
+  translate(0,0);
+
+//draw an elipse at the center of the page
+//The dimensions of the ellipse change based on mouse position
+  ellipse(width/2, height/2, mouseY, mouseX);
+
 
 }
+
+
