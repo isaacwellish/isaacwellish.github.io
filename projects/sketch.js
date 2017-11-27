@@ -132,7 +132,7 @@ function projectDirectory(){
   } 
 
   
-    aSoundTrials = createA('../projects/soundTrials/soundTrials.html', 'Medititation');
+    aSoundTrials = createA('soundTrials/soundTrials.html', 'Medititation');
     aSoundTrials.style("font-size", "18px");
     aSoundTrials.style("color", "#ffffff");
     aSoundTrials.style("background-color", "#000000");
