@@ -14,10 +14,17 @@ var drops = [];
 var instructions;
 
 
+
+
+ 
+
+
+/*
 function preload(){
 
-	img = loadImage("rain.gif");
-	allINeed = loadSound("03 - All I Need copy.mp3");
+
+	//img = loadImage("web back blur.png");
+	//allINeed = loadSound("03 - All I Need copy.mp3");
 	rain = loadSound("Sound Effect - 'Rain & Thunder'.mp3");
 	b2 = loadSound("B2 copy.wav");
 	c1 = loadSound("C1 copy.wav");
@@ -31,49 +38,53 @@ function preload(){
 
 }
 
+*/
+
 function keyPressed(){
 
 
 
 	if(keyCode == 90){//z
-		c1.play();
-		c1.setVolume(1.0)
+		c1 = loadSound("C1 copy.wav", tone1Loaded);
 		instructions.remove();
+		image(img, 0, 0, windowWidth, windowHeight);
+		//tint(255, 127);
+	 	//filter(BLUR,5);
 	}
 
 	else if(keyCode == 88){ //x
-		g1.play();
+		g1 = loadSound("G1 copy.wav", tone2Loaded);
 		instructions.remove();
 
 	}
 
 	else if(keyCode == 67){ //c
-		c2.play();
+		c2 = loadSound("C2 copy.wav", tone3Loaded);
 		instructions.remove();
 
 	}
 	else if(keyCode == 86){//v
-		e2.play();
+		e2 = loadSound("E2 copy.wav", tone4Loaded);
 		instructions.remove();
 
 	}
 	else if(keyCode == 66){//b
-		g2.play();
+		g2 = loadSound("G2 copy.wav", tone5Loaded);
 		instructions.remove();
 
 	}
 	else if(keyCode == 78){//n
-		b2.play();
+		b2 = loadSound("B2 copy.wav", tone6Loaded);
 		instructions.remove();
 
 	}
 	else if(keyCode == 77){//m
-		c3.play();
+		c3 = loadSound("C3 copy.wav", tone7Loaded);
 		instructions.remove();
 
 	}
 	else if(keyCode == 188){//,
-		d3.play();
+		d3 = loadSound("D3 copy.wav", tone8Loaded);
 		instructions.remove();
 
 	}
@@ -88,6 +99,51 @@ function keyPressed(){
 
 }
 
+
+function rainLoaded(){
+
+	rain.loop();
+	rain.setVolume(0.4);
+
+}
+
+function tone1Loaded(){
+	c1.play();
+	
+}
+
+function tone2Loaded(){
+	g1.play()
+	
+}
+function tone3Loaded(){
+	c2.play();
+	
+}
+function tone4Loaded(){
+	e2.play();
+	
+}
+function tone5Loaded(){
+	g2.play();
+	
+}
+function tone6Loaded(){
+	b2.play();
+	
+}
+function tone7Loaded(){
+	c3.play();
+	
+}
+function tone8Loaded(){
+	d3.play();
+	
+}
+function blurLoaded(){
+
+
+}
 
 
 
@@ -107,15 +163,36 @@ function styleInstructions(){
 
 
 function setup() {
+
+
 	createCanvas(windowWidth, windowHeight);
+
+
   	for (var i = 0; i < 500; i++) {
     	drops[i] = new Drop();
   	}
 
-  	styleInstructions();
 
-	rain.play();
-	rain.setVolume(0.4);
+
+  	
+  	rain = loadSound("Sound Effect - 'Rain & Thunder'.mp3", rainLoaded);
+
+
+
+
+
+
+	styleInstructions();
+
+	img = loadImage("web back blur.png");
+
+	//make a blur effect for rain
+		//image(img, 0, 0, windowWidth, windowHeight);
+		//tint(255, 127);
+	 	//filter(BLUR,5);
+
+
+	
 	
 }
 
@@ -123,11 +200,14 @@ function draw() {
 	//background(255, 150);
 
 	background(155, 211, 255);
-  	for (var i = 0; i < drops.length; i++) {
+  
+
+
+
+ 	for (var i = 0; i < drops.length; i++) {
     drops[i].fall();
     drops[i].show();
   	}
-
   	
 
 }
