@@ -152,7 +152,7 @@ function projectDirectory(){
     aStudyAbroad.mouseOut(titleChangeWhite);
     aStudyAbroad.position(width/1.45, height/2.3);
 
-    aVisual = createA('https://www.interactiveshaderformat.com/u/isaacwellishvj', 'Visuals');
+    aVisual = createA('http://bit.ly/gifyourworld', 'Gif Generator');
     aVisual.style("font-size", "18px");
     aVisual.style("color", "#ffffff");
     aVisual.style("background-color", "#000000");
@@ -162,6 +162,25 @@ function projectDirectory(){
     aVisual.mouseOut(titleChangeWhite);
     aVisual.position(width/4, height/1.7);
 
+    aVisual = createA('https://learn.adafruit.com/users/isaacwellish', 'Guides');
+    aVisual.style("font-size", "18px");
+    aVisual.style("color", "#ffffff");
+    aVisual.style("background-color", "#000000");
+    aVisual.style("padding", "10px");
+    aVisual.style("text-decoration", "none");
+    aVisual.mouseOver(titleChangeBlack);
+    aVisual.mouseOut(titleChangeWhite);
+    aVisual.position(width/1.45, height/1.35);
+
+    aVisual = createA('https://www.youtube.com/watch?v=448sZZb-k6c', 'Fruiterpretations');
+    aVisual.style("font-size", "18px");
+    aVisual.style("color", "#ffffff");
+    aVisual.style("background-color", "#000000");
+    aVisual.style("padding", "10px");
+    aVisual.style("text-decoration", "none");
+    aVisual.mouseOver(titleChangeBlack);
+    aVisual.mouseOut(titleChangeWhite);
+    aVisual.position(width/2, height/2);
 
 }
 

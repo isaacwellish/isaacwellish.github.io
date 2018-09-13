@@ -101,7 +101,7 @@ pageTitles = selectAll('.pageTitle');
 //styling loop for sub titles
 pageSubTitles = selectAll('.pageSubTitle');
   for(var i = 0; i< pageSubTitles.length; i++){
-    pageSubTitles[i].style("font-size", "18px");
+    pageSubTitles[i].style("font-size", "30px");
     pageSubTitles[i].style("color", "#ffffff");
     pageSubTitles[i].style("background-color", "#000000");
     pageSubTitles[i].style("padding", "18px");
